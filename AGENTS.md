@@ -36,8 +36,13 @@ Before changing code:
    consumer relationships.
 2. Check existing project instructions, scripts, dependencies, and the current
    Git worktree state.
-3. Identify any behavior or content that is not covered by the request.
-4. Ask the user when a decision would materially affect scope or behavior.
+3. Trace all interconnected factors, dependencies, and cascading layers that
+   influence the target behavior. Do not assume an issue has a single isolated
+   cause or apply a superficial fix without verifying contributing elements
+   (such as asset-level properties, parent DOM hierarchy, CSS stacking contexts,
+   opacity/blend-mode isolation, animation lifecycles, and global styles).
+4. Identify any behavior or content that is not covered by the request.
+5. Ask the user when a decision would materially affect scope or behavior.
 
 While changing code:
 
