@@ -1,0 +1,145 @@
+@import '@src/styles/functions';
+
+.container {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  left: max(1rem, env(safe-area-inset-left), env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 3rem;
+  pointer-events: none;
+}
+
+.hintContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 3rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  pointer-events: auto;
+
+  @include mobile {
+    margin-bottom: 0.25rem;
+  }
+
+  &:hover {
+    .hintText {
+      color: var(--black);
+      opacity: 1;
+    }
+
+    .hintLine {
+      background: linear-gradient(
+        to bottom,
+        rgba(40, 40, 43, 0.2) 0%,
+        rgba(40, 40, 43, 1) 100%
+      );
+    }
+  }
+}
+
+.hintText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 3rem;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.46rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--black);
+  opacity: 0.85;
+  user-select: none;
+  transition: opacity 180ms ease, color 180ms ease;
+
+  span {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.hintLine {
+  display: block;
+  width: 1.5px;
+  height: 2.2rem;
+  margin-top: 0.45rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(40, 40, 43, 0.05) 0%,
+    rgba(40, 40, 43, 0.75) 100%
+  );
+  transition: background 180ms ease, height 180ms ease;
+
+  @include mobile {
+    height: 1rem;
+    margin-top: 0.25rem;
+  }
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  color: var(--black);
+  background-color: var(--white);
+  cursor: pointer;
+  pointer-events: auto;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+
+  &:hover {
+    transform: scale(1.08);
+    color: var(--white);
+    background-color: var(--black);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 3px;
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.waveform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  gap: 3px;
+}
+
+.bar {
+  display: block;
+  width: 2px;
+  min-height: 4px;
+  border-radius: 999px;
+  background-color: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle {
+    transition: none;
+  }
+}

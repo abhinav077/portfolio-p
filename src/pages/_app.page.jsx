@@ -16,6 +16,7 @@ import Layout from '@src/components/dom/Layout';
 import Lenis from 'lenis';
 import Loader from '@src/components/dom/Loader';
 import Navbar from '@src/components/dom/navbar/Index';
+import AudioToggleButton from '@src/components/ui/skiper-ui/AudioToggleButton';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Scrollbar from '@src/components/dom/Scrollbar';
 import Tempus from '@darkroom.engineering/tempus';
@@ -94,6 +95,7 @@ function MyApp({ Component, pageProps, router }) {
         </div>
         <Scrollbar />
         <Navbar />
+        <AudioToggleButton />
         <Analytics />
       </>
     ),

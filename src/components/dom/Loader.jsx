@@ -32,7 +32,7 @@ function Loader() {
             innerText: 1,
           },
           onComplete: () => {
-            gsap.set('header', {
+            gsap.set(['header', '#audio-toggle'], {
               autoAlpha: 0,
               ease: 'power2.inOut',
             });
@@ -120,7 +120,7 @@ function Loader() {
               duration: 0.5,
               height: '100%',
             });
-            gsap.to('header', {
+            gsap.to(['header', '#audio-toggle'], {
               delay: 2.3,
               duration: 0.5,
               ease: 'power2.inOut',

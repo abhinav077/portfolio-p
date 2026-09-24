@@ -84,7 +84,7 @@ function Layout({ children, layoutRef, mainRef, router }) {
             3,
           )
           .to(
-            'header',
+            ['header', '#audio-toggle'],
             {
               ease: 'power2.inOut',
               autoAlpha: 1,
@@ -139,7 +139,7 @@ function Layout({ children, layoutRef, mainRef, router }) {
           }
 
           tl.to(
-            'header',
+            ['header', '#audio-toggle'],
             {
               ease: 'power2.inOut',
               autoAlpha: 0,
