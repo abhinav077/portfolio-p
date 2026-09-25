@@ -37,7 +37,6 @@ function Navbar() {
     }
   }, [router.pathname, scrollToPosition]);
 
-
   return (
     <>
       <MenuLinks />
@@ -45,24 +44,11 @@ function Navbar() {
       <header className={styles.root} role="banner">
         <div className={styles.innerHeader}>
           <Link onClick={goToTop} aria-label="Go home" scroll={false} href="/">
-            <Image
-              src="/name.gif"
-              alt="Deepasha Shastri"
-              width={205}
-              height={118}
-              unoptimized
-              priority
-              className={styles.logo}
-            />
+            <Image src="/name.gif" alt="Deepasha Shastri" width={205} height={118} unoptimized priority className={styles.logo} />
           </Link>
 
           <div className={styles.rightContainer}>
-            {!isMobile && (
-              <ButtonLink
-                href="mailto:muhd.arshadra@gmail.com"
-                label="GET IN TOUCH"
-              />
-            )}
+            {!isMobile && <ButtonLink href="mailto:muhd.arshadra@gmail.com" label="GET IN TOUCH" />}
             <MenuButton />
           </div>
         </div>

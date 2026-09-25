@@ -1,3 +1,13 @@
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.font-heading {
+  font-family: var(--font-heading);
+}
+
 .h1 {
   font-size: 6.7vw;
   line-height: 120%;
@@ -109,6 +119,10 @@
   }
 }
 
+.regular {
+  font-weight: 400;
+}
+
 .roman {
   font-weight: 550;
 }
@@ -119,4 +133,29 @@
 
 .bold {
   font-weight: 750;
+}
+
+/* Accent Font: Happy Boys (regular) */
+em,
+i,
+.italic,
+.font-italic,
+.happyboys,
+.font-happyboys {
+  font-family: var(--font-accent-italic);
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Premium Accent Font: Kaftan Serif */
+.kaftan,
+.font-kaftan,
+.font-premium {
+  font-family: var(--font-kaftan);
+}
+
+/* Body / Primary Font */
+.font-body,
+.font-primary {
+  font-family: var(--font-primary);
 }

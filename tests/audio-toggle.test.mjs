@@ -2,7 +2,10 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-const componentPath = new URL('../src/components/ui/skiper-ui/AudioToggleButton.jsx', import.meta.url);
+const componentPath = new URL(
+  '../src/components/ui/skiper-ui/AudioToggleButton.jsx',
+  import.meta.url,
+);
 const appPath = new URL('../src/pages/_app.page.jsx', import.meta.url);
 
 test('mounts the global audio toggle with the configured piano source', async () => {
@@ -12,6 +15,11 @@ test('mounts the global audio toggle with the configured piano source', async ()
   assert.match(component, /function AudioToggleButton\s*\(/);
   assert.match(component, /<button\b/);
   assert.match(component, /useSound\(['"]\/audio\/piano\.m4a['"]/);
-  assert.match(app, /import AudioToggleButton from ['"]@src\/components\/ui\/skiper-ui\/AudioToggleButton['"]/);
+  assert.match(component, /click to/i);
+  assert.match(component, /play music/i);
+  assert.match(
+    app,
+    /import AudioToggleButton from ['"]@src\/components\/ui\/skiper-ui\/AudioToggleButton['"]/,
+  );
   assert.match(app, /<AudioToggleButton\s*\/>/);
 });

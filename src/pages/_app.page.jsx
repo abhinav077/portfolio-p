@@ -10,8 +10,6 @@ import { useMemo, useRef } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import Background from '@src/components/canvas/background/Index';
 import { Canvas } from '@react-three/fiber';
-import { EffectComposer } from '@react-three/postprocessing';
-import Fluid from '@src/components/canvas/fluid/Fluid';
 import Layout from '@src/components/dom/Layout';
 import Lenis from 'lenis';
 import Loader from '@src/components/dom/Loader';
@@ -46,7 +44,7 @@ if (typeof window !== 'undefined') {
 }
 
 function MyApp({ Component, pageProps, router }) {
-  const [lenis, setLenis, fluidColor, isAbout] = useStore(useShallow((state) => [state.lenis, state.setLenis, state.fluidColor, state.isAbout]));
+  const [lenis, setLenis, isAbout] = useStore(useShallow((state) => [state.lenis, state.setLenis, state.isAbout]));
 
   const mainRef = useRef();
   const mainContainerRef = useRef();
@@ -125,25 +123,6 @@ function MyApp({ Component, pageProps, router }) {
       {domElements}
       <div ref={layoutRef} id="layout" className={styles.layout}>
         {canvasElements}
-        <Canvas
-          id="fluidCanvas"
-          flat
-          gl={{
-            antialias: false,
-            stencil: false,
-            depth: false,
-            pixelRatio: 0.1,
-          }}
-          style={{ mixBlendMode: 'difference', background: 'black' }}
-          linear
-          className={styles.canvasContainer}
-          eventSource={mainRef.current}
-          dpr={[0.1, 0.5]}
-        >
-          <EffectComposer>
-            <Fluid fluidColor={fluidColor} mainRef={mainRef} />
-          </EffectComposer>
-        </Canvas>
         <main ref={mainRef} className={styles.main}>
           <div ref={mainContainerRef} id="mainContainer" className={styles.mainContainer}>
             <Layout layoutRef={layoutRef} mainRef={mainRef} router={router}>

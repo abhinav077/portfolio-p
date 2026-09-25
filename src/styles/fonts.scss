@@ -1,51 +1,61 @@
+/* Body: Neue Haas Grotesk Display Pro */
 @font-face {
   font-family: 'Neue Haas Grotesk Display Pro';
   src: url('/fonts/NeueHaasDisplayLight.woff2') format('woff2');
-  font-weight: 450;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Neue Haas Grotesk Display Pro';
-  src: url('/fonts/NeueHaasDisplayLightItalic.woff2') format('woff2');
-  font-weight: 450;
-  font-style: italic;
+  font-weight: 400 450;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Neue Haas Grotesk Display Pro';
   src: url('/fonts/NeueHaasDisplayRoman.woff2') format('woff2');
-  font-weight: 550;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Neue Haas Grotesk Display Pro';
-  src: url('/fonts/NeueHaasDisplayRomanItalic.woff2') format('woff2');
-  font-weight: 550;
-  font-style: italic;
+  font-weight: 500 550;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Neue Haas Grotesk Display Pro';
   src: url('/fonts/NeueHaasDisplayMedium.woff2') format('woff2');
-  font-weight: 650;
+  font-weight: 600 750;
   font-display: swap;
 }
 
+/* Headings: Sailors Slant */
+@font-face {
+  font-family: 'Sailors Slant';
+  src: url('/fonts/sailors-slant.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* Accent Italic: Happy Boys */
+@font-face {
+  font-family: 'Happy Boys';
+  src: url('/fonts/happyboys-regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* Connect italic style in body text to Happy Boys */
 @font-face {
   font-family: 'Neue Haas Grotesk Display Pro';
-  src: url('/fonts/NeueHaasDisplayBold.woff2') format('woff2');
-  font-weight: 750;
+  src: url('/fonts/happyboys-regular.ttf') format('truetype');
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Premium Accent: Kaftan Serif */
+@font-face {
+  font-family: 'Kaftan Serif';
+  src: url('/fonts/kaftan-trial.otf') format('opentype');
   font-display: swap;
 }
 
 :root {
-  --font-primary: 'Neue Haas Grotesk Display Pro';
+  --font-primary: 'Neue Haas Grotesk Display Pro', sans-serif;
+  --font-heading: 'Sailors Slant', sans-serif;
+  --font-accent-italic: 'Happy Boys', cursive, sans-serif;
+  --font-kaftan: 'Kaftan Serif', serif;
 }
 
 body {
-  font-family: var(--font-primary), sans-serif;
+  font-family: var(--font-primary);
 }

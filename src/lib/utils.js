@@ -1,1 +1,2 @@
-export { cn } from "cn"
+/* eslint-disable import/prefer-default-export */
+export { cn } from 'cn';
